@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -22,5 +22,36 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  @apply px-[64px] w-full max-w-full;
+}
+
+.typography {
+  &-body1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+  &-h2 {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 50px;
+    line-height: 120%;
+    letter-spacing: -4%;
+    text-align: center;
+  }
+}
+.text-gradient {
+
+  &-01 {
+    background: linear-gradient(180deg, #e8e8e8 0%, #959595 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
