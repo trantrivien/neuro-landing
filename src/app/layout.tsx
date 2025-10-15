@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
+import "./tailwind.css";
 import Header from "@/components/layout/Header";
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap', 
+  display: 'swap',
 });
 
 
