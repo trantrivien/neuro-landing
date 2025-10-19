@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import "./tailwind.css";
 import Header from "@/components/layout/Header";
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
-
-
 
 export const metadata: Metadata = {
   title: "YieldNad",
@@ -26,6 +25,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

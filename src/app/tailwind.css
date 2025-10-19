@@ -1,1 +1,110 @@
 @import "tailwindcss";
+.cd__main {
+  background: #000 !important;
+}
+.animated-border-box,
+.animated-border-box-glow {
+  height: 607px;
+  max-height: 607px;
+  max-width: 1321px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 16px;
+}
+
+.animated-border-box-glow {
+  filter: blur(700px);
+}
+
+.animated-border-box:before,
+.animated-border-box-glow:before {
+  content: "";
+  z-index: -1;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #3d99f5ed,
+    rgba(0, 0, 0, 0),
+    #dd8f56,
+    rgba(0, 0, 0, 0)
+  );
+  animation: rotate 10s linear infinite;
+}
+
+.animated-border-box:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  top: 2px;
+
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  /*bg color*/
+  background: #1d1d1d;
+  border-radius: 16px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.center-box {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+.candle {
+  height: 161px;
+  width: 15px;
+  position: relative;
+  .candle-body {
+    height: 161px;
+    width: 1px;
+    opacity: 1;
+    background: #ffffff;
+    filter: blur(2);
+    mix-blend-mode: Plus lighter;
+  }
+  .candle-light {
+    width: 0;
+    height: 53px;
+    position: absolute;
+    top: 100;
+    box-shadow:
+      0 0 15px 5px rgb(255, 255, 255),
+      0 0 30px 10px rgb(255, 255, 255);
+    opacity: 1;
+    mix-blend-mode: Plus lighter;
+    animation: moveUpDown 2s ease-in-out infinite;
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    top: 0;
+    opacity: 0.8;
+  }
+  50% {
+    top: calc(100% - 53px);
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0.8;
+  }
+}
