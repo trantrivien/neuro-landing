@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "YieldNad",
-  description: "Magic Monad Money",
+  title: "NeuroVault - Earn Real Yield",
+  description: "NeuroVault - Earn Real Yield",
 };
 
 export default function RootLayout({
