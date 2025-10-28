@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Button from "../ui/Button";
 
-const fadeInUp: any = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (delay: number) => ({
     opacity: 1,
