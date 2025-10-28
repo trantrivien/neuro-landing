@@ -1,5 +1,6 @@
 import React from "react";
 import Candle from "../ui/Candle";
+import { NumberTicker } from "../ui/NumberTicker";
 
 function About() {
   return (
@@ -40,13 +41,22 @@ function About() {
 
       <div className=" grid grid-cols-4 space-x-14 mt-24">
         <div className="flex flex-col justify-center items-center space-y-4">
-          <span className="typography-h4 text-white">20+</span>
+          <span className="typography-h4 text-white">
+            <NumberTicker value={20} className="typography-h4 text-white" />+
+          </span>
           <span className="typography-body1 text-[#C4C4C4] text-center">
             Strategies Supported
           </span>
         </div>
         <div className="flex flex-col justify-center items-center space-y-4">
-          <span className="typography-h4 text-white">0.5%</span>
+          <span className="typography-h4 text-white">
+            <NumberTicker
+              value={0.5}
+              decimalPlaces={1}
+              className="typography-h4 text-white"
+            />
+            %
+          </span>
           <span className="typography-body1 text-[#C4C4C4] text-center">
             Base Redemption Fee
             <br />
@@ -54,13 +64,20 @@ function About() {
           </span>
         </div>
         <div className="flex flex-col justify-center items-center space-y-4">
-          <span className="typography-h4 text-white">100,000+</span>
+          <span className="typography-h4 text-white">
+            {" "}
+            <NumberTicker value={100000} className="typography-h4 text-white" />
+            +
+          </span>
           <span className="typography-body1 text-[#C4C4C4] text-center">
             Redemptions Processed
           </span>
         </div>
         <div className="flex flex-col justify-center items-center space-y-4">
-          <span className="typography-h4 text-white">200+</span>
+          <span className="typography-h4 text-white">
+            {" "}
+            <NumberTicker value={200} className="typography-h4 text-white" />+
+          </span>
           <span className="typography-body1 text-[#C4C4C4] text-center">
             Merchants Accept
           </span>
