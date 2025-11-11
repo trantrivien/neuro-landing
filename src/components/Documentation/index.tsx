@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 interface DocumentationSlide {
   id: number;
@@ -7,34 +8,46 @@ interface DocumentationSlide {
   subtitle: string;
   description: string;
   buttonText: string;
+  buttonLink?: string;
+  imageSrc:string
 }
 
 const slides: DocumentationSlide[] = [
   {
     id: 1,
-    title: "Integrate NeroVault. Unlock Onchain Capital Flow.",
-    subtitle: "1. ERC4626-powered contract suite for vault management.",
+    title: "Automate Treasury, Maximize Performance",
+    imageSrc: "/assets/documents/treasury.svg",
+    subtitle: "Automated Onchain Treasury",
     description:
-      "Access the core vault logic directly on-chain: deposit, mint, request async redemptions, fulfill requests, and route fees, all aligned with ERC4626 and MetaVault's dual-token architecture (nUSD/xUSD). Build DeFi apps, yield aggregators, or treasury portals with deep contract control.",
+      "Unlock onchain treasury automation with NeroVault. Seamlessly manage diverse assets, optimize yield, and scale your financial operations across multiple chain, no technical barriers.",
     buttonText: "View Contract Docs",
+    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
   },
   {
     id: 2,
-    title: "Operate Like a Vault DAO. Without Building One",
+    title: "Effortless Governance & Asset Control",
+    imageSrc: "/assets/documents/effortless.svg",
+
     subtitle:
-      "2. Async fulfillment, yield tracking, and fee routing, all scriptable",
+      "Collaborative Asset Governance",
     description:
-      "The NeroVault Operator SDK helps you manage redemptions, automate fee routing, track vault health, and execute strategy flows.  With async-safe logic and AI-trigger compatibility, this toolkit is perfect for DAO treasuries, RWA managers, or stablecoin teams.",
+      "Bring enterprise-grade governance to your vault with easy permission settings, automated approvals, and transparent reporting. Empower teams, DAOs, and investors to collaborate with confidence.",
     buttonText: "Operator Guide",
+    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
+
   },
   {
     id: 3,
-    title: "Composable. Audited. Chain-Agnostic.",
+    title: "Ready for Growth. Open to Innovation",
+    imageSrc: "/assets/documents/innovation.svg",
+
     subtitle:
-      "3. Plug NeroVault into any DeFi stack or onchain treasury system.",
+      "Modular & Scalable Integration",
     description:
-      "Built on the ERC4626 standard, NeroVault integrates with dashboards, protocols, and vault routers out of the box. Deploy across EVM-compatible chains with minimal changes.  Use nUSD as a stable yield asset, track xUSD as vault NAV, or route flows through MetaVault as a base layer.",
+      "NeuroVault’s modular architecture fits any blockchain and any product. Deploy upgrades instantly, integrate with Web3 protocols, and customize your solution for future growth, all with robust security.",
     buttonText: "View Integration Guide",
+    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
+
   },
 ];
 
@@ -191,16 +204,16 @@ function Documentation() {
                   {slides[activeSlide].description}
                 </p>
               </div>
-              <button className="bg-[#F7F7F7] py-4 px-6 rounded-full">
+              <Link href={slides[activeSlide].buttonLink ?? ''} target="_blank" className="bg-[#F7F7F7] py-4 px-6 rounded-full">
                 <span className="typography-body1 text-[#020202]">
                   {slides[activeSlide].buttonText}{" "}
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
         <Image
-          src={"/assets/document.svg"}
+          src={slides[activeSlide].imageSrc}
           alt="Document"
           width={449}
           height={510}
