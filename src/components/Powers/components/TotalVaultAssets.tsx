@@ -4,10 +4,11 @@ const BarVisualization = ({ reversed = false }: { reversed?: boolean }) => {
     height: Math.random() > 0.5 ? 69 : 69 * 0.6,
     gradient: Math.random() > 0.5,
   }));
+  const displayBars = reversed ? [...bars].reverse() : bars;
 
   return (
     <div className="h-[69px] w-full flex items-end justify-between gap-[6px]">
-      {bars.map((bar) => (
+      {displayBars.map((bar) => (
         <div
           key={bar.key}
           className="w-[7px] rounded-[20px] transition-all"

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import Button from "../ui/Button";
 
 const fadeInUp: Variants = {
@@ -20,7 +21,7 @@ const fadeInUp: Variants = {
 function HeroBanner() {
   return (
     <div className=" min-h-[1116px] ">
-      <img
+     <img
         src="/herobanner.png"
         alt="Neurovault"
         className="w-full absolute top-0 z-[-1] min-h-[1116px] max-h-[1500px] hero-banner"

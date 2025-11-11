@@ -1,55 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-interface DocumentationSlide {
-  id: number;
-  title: string;
-  subtitle: string;
-  description: string;
-  buttonText: string;
-  buttonLink?: string;
-  imageSrc:string
-}
-
-const slides: DocumentationSlide[] = [
-  {
-    id: 1,
-    title: "Automate Treasury, Maximize Performance",
-    imageSrc: "/assets/documents/treasury.svg",
-    subtitle: "Automated Onchain Treasury",
-    description:
-      "Unlock onchain treasury automation with NeroVault. Seamlessly manage diverse assets, optimize yield, and scale your financial operations across multiple chain, no technical barriers.",
-    buttonText: "View Contract Docs",
-    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
-  },
-  {
-    id: 2,
-    title: "Effortless Governance & Asset Control",
-    imageSrc: "/assets/documents/effortless.svg",
-
-    subtitle:
-      "Collaborative Asset Governance",
-    description:
-      "Bring enterprise-grade governance to your vault with easy permission settings, automated approvals, and transparent reporting. Empower teams, DAOs, and investors to collaborate with confidence.",
-    buttonText: "Operator Guide",
-    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
-
-  },
-  {
-    id: 3,
-    title: "Ready for Growth. Open to Innovation",
-    imageSrc: "/assets/documents/innovation.svg",
-
-    subtitle:
-      "Modular & Scalable Integration",
-    description:
-      "NeuroVault’s modular architecture fits any blockchain and any product. Deploy upgrades instantly, integrate with Web3 protocols, and customize your solution for future growth, all with robust security.",
-    buttonText: "View Integration Guide",
-    buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
-
-  },
-];
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { DOCUMENTATION_SLIDES } from "@/constants";
 
 function Documentation() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -61,17 +14,21 @@ function Documentation() {
   const wheelCooldownRef = useRef(false);
   const TRACK_HEIGHT = 409;
   const HANDLE_HEIGHT = 147;
-  const TRAVEL = TRACK_HEIGHT - HANDLE_HEIGHT; // 262px
-  const SEGMENT = TRAVEL / (slides.length - 1);
+  const TRAVEL = TRACK_HEIGHT - HANDLE_HEIGHT;
+  const slidesCount = DOCUMENTATION_SLIDES.length;
+  const SEGMENT = useMemo(
+    () => (slidesCount > 1 ? TRAVEL / (slidesCount - 1) : 0),
+    [TRAVEL, slidesCount],
+  );
+  const sliderLabel = useMemo(
+    () => slidesCount.toString().padStart(2, "0"),
+    [slidesCount],
+  );
 
-  const goTo = (index: number) => {
-    const clamped = Math.max(0, Math.min(slides.length - 1, index));
+  const goTo = useCallback((index: number) => {
+    const clamped = Math.max(0, Math.min(slidesCount - 1, index));
     setActiveSlide(clamped);
-  };
-
-  const handleSliderClick = (index: number) => {
-    goTo(index);
-  };
+  }, [slidesCount]);
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -80,7 +37,7 @@ function Documentation() {
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
+    if (!isDragging || SEGMENT === 0) return;
     const deltaY = e.clientY - startY;
     const step = Math.round(deltaY / SEGMENT);
     if (step !== 0) {
@@ -95,23 +52,18 @@ function Documentation() {
   };
 
   const handleTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (SEGMENT === 0) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const y = e.clientY - rect.top;
     const index = Math.round((y - HANDLE_HEIGHT / 2) / SEGMENT);
     goTo(index);
   };
 
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    if (e.deltaY > 0) goTo(activeSlide + 1);
-    else goTo(activeSlide - 1);
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowDown" || e.key === "PageDown") goTo(activeSlide + 1);
     if (e.key === "ArrowUp" || e.key === "PageUp") goTo(activeSlide - 1);
     if (e.key === "Home") goTo(0);
-    if (e.key === "End") goTo(slides.length - 1);
+    if (e.key === "End") goTo(slidesCount - 1);
   };
 
   const sliderPosition = activeSlide * SEGMENT;
@@ -151,7 +103,7 @@ function Documentation() {
     return () => {
       el.removeEventListener("wheel", onWheel as EventListener);
     };
-  }, [hovering, activeSlide, slides.length]);
+  }, [hovering, activeSlide, goTo]);
   return (
     <div id="documentation" className="center-box h-[800px]">
       <div className="animated-border-box-glow"></div>
@@ -170,7 +122,7 @@ function Documentation() {
             <div
               className="relative w-2 h-[435px] flex-shrink-0 "
               aria-valuemin={1}
-              aria-valuemax={slides.length}
+              aria-valuemax={slidesCount}
               aria-valuenow={activeSlide + 1}
               tabIndex={0}
               onKeyDown={handleKeyDown}
@@ -186,34 +138,40 @@ function Documentation() {
                 onPointerLeave={handlePointerUp}
               ></div>
             </div>
-            <span className="typography-body1 !text-[#3D99F5]">03</span>
+            <span className="typography-body1 !text-[#3D99F5]">
+              {sliderLabel}
+            </span>
           </div>
           <div>
             <span className="typography-body1 !text-[#3D99F5]">Document</span>
 
             <div className=" space-y-16 mt-6">
               <h2 className="typography-h2 !text-left">
-                {slides[activeSlide].title}
+                {DOCUMENTATION_SLIDES[activeSlide].title}
               </h2>
               <div className=" space-y-6">
                 <p className="typography-body1 font-bold">
                   {" "}
-                  {slides[activeSlide].subtitle}
+                  {DOCUMENTATION_SLIDES[activeSlide].subtitle}
                 </p>
                 <p className="typography-body1 !font-normal text-[#C4C4C4]">
-                  {slides[activeSlide].description}
+                  {DOCUMENTATION_SLIDES[activeSlide].description}
                 </p>
               </div>
-              <Link href={slides[activeSlide].buttonLink ?? ''} target="_blank" className="bg-[#F7F7F7] py-4 px-6 rounded-full">
+              <Link
+                href={DOCUMENTATION_SLIDES[activeSlide].buttonLink ?? ""}
+                target="_blank"
+                className="bg-[#F7F7F7] py-4 px-6 rounded-full"
+              >
                 <span className="typography-body1 text-[#020202]">
-                  {slides[activeSlide].buttonText}{" "}
+                  {DOCUMENTATION_SLIDES[activeSlide].buttonText}{" "}
                 </span>
               </Link>
             </div>
           </div>
         </div>
         <Image
-          src={slides[activeSlide].imageSrc}
+          src={DOCUMENTATION_SLIDES[activeSlide].imageSrc}
           alt="Document"
           width={449}
           height={510}

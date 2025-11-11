@@ -1,11 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import type { ServiceContent } from '@/constants'
+
 interface ServiceCardProps {
-    data: {
-        title: string;
-        description: string;
-        content: string;
-    }
+    data: ServiceContent
 }
 
 function ServiceCard({ data }: Readonly<ServiceCardProps>) {

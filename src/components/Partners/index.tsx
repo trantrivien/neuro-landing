@@ -1,12 +1,6 @@
 import React from "react";
-import ScrollingLogos from "./ScrollingLogos";
 import Image from "next/image";
-
-const logos = [
-  { src: "/assets/partnersLogo/Logo1.png", alt: "Binace" },
-  { src: "/assets/partnersLogo/Logo2.png", alt: "Google" },
-  { src: "/assets/partnersLogo/Logo3.png", alt: "FB" },
-];
+import { PARTNER_LOGOS } from "@/constants";
 
 function Partners() {
   return (
@@ -22,7 +16,7 @@ function Partners() {
           pauseOnHover // hover to pause
           className="mx-auto max-w-screen-2xl"
         /> */}
-        {logos.map((logo, i) => (
+        {PARTNER_LOGOS.map((logo, i) => (
           <div key={`a-${i}`}>
             <Image
               src={logo.src}

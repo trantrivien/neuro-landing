@@ -3,42 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import SectionHeader from "../ui/SectionHeader";
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqData: FAQItem[] = [
-  {
-    question: "How do I redeem assets from NeroVault?",
-    answer: `You burn your nUSD shares.
-If liquidity is available → instant USDT
-If not → request is queued for async redemption  Wait for the cooldown (e.g. 72h), then it can be fulfilled or cancelled.`,
-  },
-  {
-    question: "What's the difference between nUSD and xUSD?",
-    answer: `nUSD = Your vault shares (ERC4626-compatible)
-xUSD = Vault-side NAV tracker (non-transferable)  Together, they form the dual-token system: nUSD tracks ownership, xUSD tracks value. PPS = xUSD ÷ nUSD.`,
-  },
-  {
-    question: "What happens during async redemption?",
-    answer: `Your nUSD is locked. A cooldown timer starts (default: 72h).  Once time passes, operators or agents can call fulfillRedeem().  You receive USDT, vault burns your nUSD and xUSD.  You can cancel anytime before it's fulfilled — no penalty.`,
-  },
-  {
-    question: "What are the fees, and who earns them?",
-    answer: `Redemptions apply a base fee (e.g. 0.5%).  Fees are split:
-50% to Treasury (protocol earnings)
-50% recycled into the vault as new xUSD (raises NAV)  The longer you stay in, the more you benefit.`,
-  },
-  {
-    question: "Can my protocol or DAO integrate with NeroVault?",
-    answer: `Yes — NeroVault is modular.
-Use our ERC4626 methods directly
-Automate flows with the Operator SDK
-Track vault health, yield, and redemptions via event logs or AI triggers  Composability is native. No middleware needed.`,
-  },
-];
+import { FAQ_ITEMS } from "@/constants";
 
 function FaqComponent() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -54,7 +19,7 @@ function FaqComponent() {
     >
       <SectionHeader title="Questions & Answers" section="FAQ" />
       <div className="w-full max-w-[868px] mx-auto mt-12 flex flex-col rounded-2xl">
-        {faqData.map((item, index) => (
+        {FAQ_ITEMS.map((item, index) => (
           <div
             key={index}
             className="flex flex-col border-b-[4px] bg-[#1d1d1d] rounded-2xl overflow-hidden border-[#020202] "
