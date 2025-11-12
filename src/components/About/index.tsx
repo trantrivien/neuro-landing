@@ -42,10 +42,10 @@ function About() {
           Built for the Future of Onchain Capital Flow
         </h2>
         <p className="typography-body text-[#C4C4C4] text-center">
-          NeroVault is engineered for DeFi strategists, stablecoin managers, and
+          NeuroVault is engineered for DeFi strategists, stablecoin managers, and
           treasury operators who demand more than just deposits. With
           non-custodial logic, async redemption, and smart fee routing,
-          NeroVault transforms passive capital into an optimized asset flow
+          NeuroVault transforms passive capital into an optimized asset flow
           across chains and strategies.
         </p>
       </div>

@@ -12,7 +12,7 @@ function Powers() {
     <div className="py-[100px] container !max-w-[1321px] mx-auto">
       <SectionHeader
         title="What Powers the Future of Onchain Vaults"
-        section="WHY NEROVAULT"
+        section="WHY NEUROVAULT"
       />
       <div className="mx-auto mt-[71px]">
         <div className="flex h-full gap-5 justify-center items-center lg:justify-start">

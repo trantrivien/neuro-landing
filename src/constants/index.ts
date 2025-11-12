@@ -21,7 +21,7 @@ export const SERVICES: ServiceContent[] = [
     title: "AI-Powered Yield Management",
     description: "Optimize capital like a pro",
     content:
-      "NeroVault integrates AI logic to help operators make informed deployment decisions — identifying idle capital, strategy risk signals, and NAV impact",
+      "NeuroVault integrates AI logic to help operators make informed deployment decisions — identifying idle capital, strategy risk signals, and NAV impact",
   },
   {
     title: "Intelligent Async Redemptions",
@@ -46,7 +46,7 @@ export const POWERS: PowerItem[] = [
   {
     title: "Ownership-First, Upgradeable by Design",
     description:
-      "NeroVault is non-custodial and upgradeable via proxy, giving you self-custody with future-proof infrastructure. No centralized keys. No lock-ins. Total alignment.",
+      "NeuroVault is non-custodial and upgradeable via proxy, giving you self-custody with future-proof infrastructure. No centralized keys. No lock-ins. Total alignment.",
   },
   {
     title: "ERC4626-Backed, Dual-Token Engine",
@@ -71,7 +71,7 @@ export const POWERS: PowerItem[] = [
   {
     title: "Modular. Composable. Battle-Ready",
     description:
-      "Built for composability, NeroVault is protocol-native and works seamlessly across EVMs. No yield farming gimmicks, just real infrastructure, ready to scale.",
+      "Built for composability, NeuroVault is protocol-native and works seamlessly across EVMs. No yield farming gimmicks, just real infrastructure, ready to scale.",
   },
 ];
 
@@ -92,7 +92,7 @@ export const DOCUMENTATION_SLIDES: DocumentationSlide[] = [
     imageSrc: "/assets/documents/treasury.svg",
     subtitle: "Automated Onchain Treasury",
     description:
-      "Unlock onchain treasury automation with NeroVault. Seamlessly manage diverse assets, optimize yield, and scale your financial operations across multiple chain, no technical barriers.",
+      "Unlock onchain treasury automation with NeuroVault. Seamlessly manage diverse assets, optimize yield, and scale your financial operations across multiple chain, no technical barriers.",
     buttonText: "View Contract Docs",
     buttonLink: "https://tumilabs2022.gitbook.io/neurovault",
   },
@@ -125,7 +125,7 @@ export type FaqItem = {
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "How do I redeem assets from NeroVault?",
+    question: "How do I redeem assets from NeuroVault?",
     answer: `You burn your nUSD shares.
 If liquidity is available → instant USDT
 If not → request is queued for async redemption  Wait for the cooldown (e.g. 72h), then it can be fulfilled or cancelled.`,
@@ -146,8 +146,8 @@ xUSD = Vault-side NAV tracker (non-transferable)  Together, they form the dual-t
 50% recycled into the vault as new xUSD (raises NAV)  The longer you stay in, the more you benefit.`,
   },
   {
-    question: "Can my protocol or DAO integrate with NeroVault?",
-    answer: `Yes — NeroVault is modular.
+    question: "Can my protocol or DAO integrate with NeuroVault?",
+    answer: `Yes — NeuroVault is modular.
 Use our ERC4626 methods directly
 Automate flows with the Operator SDK
 Track vault health, yield, and redemptions via event logs or AI triggers  Composability is native. No middleware needed.`,

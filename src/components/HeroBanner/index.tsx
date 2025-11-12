@@ -36,7 +36,7 @@ function HeroBanner() {
           viewport={{ once: true }}
           className="typography-body1 bg-[#8C8C8C57] px-4 py-2 rounded-full"
         >
-          Welcome to NeroVault
+          Welcome to NeuroVault
         </motion.span>
 
         <motion.h2
@@ -60,7 +60,7 @@ function HeroBanner() {
           viewport={{ once: true }}
           className="max-w-[637px] text-center typography-body1 text-[#C4C4C4] my-10"
         >
-          NeroVault is a next-gen ERC4626 vault with async redemption, fee
+          NeuroVault is a next-gen ERC4626 vault with async redemption, fee
           routing, and full NAV tracking via dual-token architecture (nUSD &
           xUSD).
         </motion.p>
