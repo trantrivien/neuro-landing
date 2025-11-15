@@ -18,9 +18,9 @@ function About() {
   return (
     <div
       id="about"
-      className="py-[100px] container relative flex flex-col justify-center items-center mt-[132px] max-w-[1321px]"
+      className="py-[100px] container relative flex flex-col justify-center items-center md:mt-[132px] mt-[300px] max-w-[1321px]"
     >
-      <div className="flex w-full absolute top-[100px]  justify-between max-w-[80vw] ">
+      <div className=" overflow-hidden md:opacity-100 opacity-25 flex w-full absolute top-[100px]  justify-between max-w-[80vw] ">
         {CANDLE_COLUMNS.map((column, columnIndex) => (
           <div
             key={`column-${columnIndex}`}
@@ -38,7 +38,7 @@ function About() {
         ))}
       </div>
       <div className="max-w-[647px] space-y-16">
-        <h2 className="typography-h2 text-gradient-01 mt-6">
+        <h2 className="md:typography-h2 typography-h3 text-center text-gradient-01 mt-6">
           Built for the Future of Onchain Capital Flow
         </h2>
         <p className="typography-body text-[#C4C4C4] text-center">
@@ -50,7 +50,7 @@ function About() {
         </p>
       </div>
 
-      <div className=" grid grid-cols-4 space-x-14 mt-24">
+      <div className=" grid md:grid-cols-4 grid-cols-1 md:space-x-14 space-x-0 md:space-y-0 space-y-10 mt-24">
         {ABOUT_STATS.map((stat) => (
           <div
             key={stat.label}

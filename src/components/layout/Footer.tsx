@@ -47,8 +47,8 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="py-12  mt-[100px] page-container flex justify-between items-center">
-      <div className="mx-auto w-full mt-[100px]">
+    <footer className="py-12 md:px-20 px-4 mt-[10px] page-container flex justify-between items-center">
+      <div className="mx-auto w-full">
         <div className="flex flex-col gap-8 sm:gap-12">
           {/* Logo and Tagline */}
           <div className="flex flex-col gap-6 sm:gap-8">
@@ -63,7 +63,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex md:flex-row flex-col justify-between">
             <div className="flex flex-col gap-5">
               <h3 className="text-[#F7F7F7] text-lg font-semibold">Company</h3>
               <ul className="flex flex-col gap-5">

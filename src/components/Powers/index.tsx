@@ -9,13 +9,13 @@ import { POWERS } from "@/constants";
 
 function Powers() {
   return (
-    <div className="py-[100px] container !max-w-[1321px] mx-auto">
+    <div className="md:py-[100px] py-8 container !max-w-[1321px] mx-auto">
       <SectionHeader
         title="What Powers the Future of Onchain Vaults"
         section="WHY NEUROVAULT"
       />
-      <div className="mx-auto mt-[71px]">
-        <div className="flex h-full gap-5 justify-center items-center lg:justify-start">
+      <div className="mx-auto px-4 mt-[71px]">
+        <div className="flex md:flex-row flex-col h-full gap-5 justify-center items-center lg:justify-start">
           <VaultNAV />
           <TotalVaultAssets />
           <RedemptionPaths />
@@ -23,7 +23,7 @@ function Powers() {
         </div>
       </div>
 
-      <div className="mt-[100px] grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  w-fit mx-auto gap-x-5 gap-y-[46px]">
+      <div className="md:mt-[100px] mt-16 px-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  w-fit mx-auto gap-x-5 gap-y-[46px]">
         {POWERS.map((power, index) => (
           <PowerLogic
             key={index}

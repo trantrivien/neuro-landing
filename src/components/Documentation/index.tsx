@@ -105,10 +105,11 @@ function Documentation() {
     };
   }, [hovering, activeSlide, goTo]);
   return (
-    <div id="documentation" className="center-box h-[800px]">
+    <div className="px-4 relative mx-4">
+    <div id="documentation" className="center-box md:!p-[100px] !p-4 w-full md:h-[800px] h-[900px]">
       <div className="animated-border-box-glow"></div>
       <div
-        className="animated-border-box flex justify-between items-center p-12 gap-12"
+        className="animated-border-box flex md:flex-row flex-col justify-between items-center md:p-12 p-4 gap-12"
         ref={areaRef}
         onMouseEnter={() => setHovering(true)}
         onMouseLeave={() => {
@@ -145,23 +146,23 @@ function Documentation() {
           <div>
             <span className="typography-body1 !text-[#3D99F5]">Document</span>
 
-            <div className=" space-y-16 mt-6">
-              <h2 className="typography-h2 !text-left">
+            <div className=" md:space-y-16 space-y-6 md:mt-6 mt-3">
+              <h2 className="md:typography-h2 typography-h4  !text-left">
                 {DOCUMENTATION_SLIDES[activeSlide].title}
               </h2>
               <div className=" space-y-6">
-                <p className="typography-body1 font-bold">
+                <p className="md:typography-body1 typography-body2 font-bold">
                   {" "}
                   {DOCUMENTATION_SLIDES[activeSlide].subtitle}
                 </p>
-                <p className="typography-body1 !font-normal text-[#C4C4C4]">
+                <p className="md:typography-body1 typography-body2 !font-normal text-[#C4C4C4]">
                   {DOCUMENTATION_SLIDES[activeSlide].description}
                 </p>
               </div>
               <Link
                 href={DOCUMENTATION_SLIDES[activeSlide].buttonLink ?? ""}
                 target="_blank"
-                className="bg-[#F7F7F7] py-4 px-6 rounded-full"
+                className="bg-[#F7F7F7] py-4 px-6  rounded-full"
               >
                 <span className="typography-body1 text-[#020202]">
                   {DOCUMENTATION_SLIDES[activeSlide].buttonText}{" "}
@@ -177,6 +178,7 @@ function Documentation() {
           height={510}
         />
       </div>
+    </div>
     </div>
   );
 }

@@ -8,14 +8,8 @@ function Partners() {
       <h1 className="typography-h5 text-gradient-01 text-center">
         Partnered with worldwide leading companies
       </h1>
-      <div className="mt-16 flex justify-center w-full gap-x-20">
-        {/* <ScrollingLogos
-          logos={logos}
-          // speed (seconds per loop)
-          gap={87} // spacing between logos (px)
-          pauseOnHover // hover to pause
-          className="mx-auto max-w-screen-2xl"
-        /> */}
+      <div className="mt-16 flex justify-center w-full md:gap-x-20 gap-x-4">
+
         {PARTNER_LOGOS.map((logo, i) => (
           <div key={`a-${i}`}>
             <Image

@@ -7,7 +7,7 @@ function Services() {
     return (
         <div id='features' className='my-[100px]'>
             <SectionHeader title='Modular. Secure. Capital-Efficient' section='SERVICES' />
-            <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 w-fit mx-auto mt-16'>
+            <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 w-fit mx-auto mt-16 px-4'>
                 {SERVICES.map((service, index) => (
                     <ServiceCard key={index} data={service} />
                 ))}

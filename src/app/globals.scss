@@ -27,9 +27,7 @@ body {
   color: var(--foreground);
 }
 
-.container {
-  @apply px-[64px] w-full max-w-full;
-}
+
 
 .typography {
   &-body1 {
@@ -70,6 +68,15 @@ body {
     font-weight: 500;
     font-style: Medium;
     font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -4%;
+
+  }
+
+  &-h6 {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
     line-height: 120%;
     letter-spacing: -4%;
 

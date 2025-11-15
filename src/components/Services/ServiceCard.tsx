@@ -8,7 +8,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ data }: Readonly<ServiceCardProps>) {
     return (
-        <div className='service-card w-[424px]'>
+        <div className='service-card md:w-[424px] w-full'>
             <Image
                 src={"/service-card-bg.svg"}
                 alt="Service Card Background"

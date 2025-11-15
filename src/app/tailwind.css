@@ -5,8 +5,8 @@
 }
 .animated-border-box,
 .animated-border-box-glow {
-  height: 607px;
-  max-height: 607px;
+  @apply md:h-[607px] h-[870px] md:max-h-[607px];
+
   max-width: 1321px;
   width: 100%;
   position: absolute;
@@ -124,4 +124,9 @@
   100% {
     filter: drop-shadow(0 0 0rem rgb(255, 255, 255));
   }
+}
+
+
+.container {
+  @apply md:px-[64px] px-4 w-full max-w-full;
 }

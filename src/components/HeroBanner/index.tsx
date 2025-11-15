@@ -20,14 +20,14 @@ const fadeInUp: Variants = {
 
 function HeroBanner() {
   return (
-    <div className=" min-h-[1116px] ">
+    <div className="md:min-h-[1116px] min-h-[230px]">
      <img
         src="/herobanner.png"
         alt="Neurovault"
-        className="w-full absolute top-0 z-[-1] min-h-[1116px] max-h-[1500px] hero-banner"
+        className="w-full md:opacity-100 opacity-80 absolute top-0 z-[-1] min-h-[940px] md:min-h-[1116px] md:object-fill object-cover md:max-h-[1500px] hero-banner"
       />
 
-      <div className="container flex flex-col justify-center items-center mt-25">
+      <div className="container flex flex-col justify-center items-center md:mt-25 mt-6">
         <motion.span
           variants={fadeInUp}
           initial="hidden"
@@ -45,7 +45,7 @@ function HeroBanner() {
           whileInView="visible"
           custom={0.4}
           viewport={{ once: true }}
-          className="typography-h2 text-gradient-01 mt-6 text-center"
+          className="md:typography-h2 typography-h3 text-gradient-01 mt-6 text-center"
         >
           Deposit, redeem, and grow
           <br />
