@@ -9,7 +9,7 @@ import { MdClose } from "react-icons/md";
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
-    <div className="container md:!px-0 py-[24px] flex justify-between items-center !max-w-[1321px] mx-auto">
+    <div className="container md:!px-4 py-[24px] flex justify-between items-center !max-w-[1321px] mx-auto">
       <Image
         src={"./logo.svg"}
         width={279}

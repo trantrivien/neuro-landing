@@ -5,7 +5,7 @@
 }
 .animated-border-box,
 .animated-border-box-glow {
-  @apply md:h-[607px] h-[870px] md:max-h-[607px];
+  @apply md:h-[607px] h-[1000px] md:max-h-[607px];
 
   max-width: 1321px;
   width: 100%;
@@ -129,4 +129,40 @@
 
 .container {
   @apply md:px-[64px] px-4 w-full max-w-full;
+}
+
+.scroll-more{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+  gap: 8px;
+}
+
+
+/* Arrow Bounce */
+.arrow {
+  display: block;
+  margin-top: 4px;
+  font-size: 20px;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

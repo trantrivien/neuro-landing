@@ -20,7 +20,7 @@ function About() {
       id="about"
       className="py-[100px] container relative flex flex-col justify-center items-center md:mt-[132px] mt-[300px] max-w-[1321px]"
     >
-      <div className=" overflow-hidden md:opacity-100 opacity-25 flex w-full absolute top-[100px]  justify-between max-w-[80vw] ">
+      <div className=" overflow-hidden md:overflow-visible md:opacity-100 opacity-25 flex w-full absolute top-[100px]  justify-between max-w-[80vw] ">
         {CANDLE_COLUMNS.map((column, columnIndex) => (
           <div
             key={`column-${columnIndex}`}
