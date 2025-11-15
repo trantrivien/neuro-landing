@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className=" overflow-x-hidden w-screen max-w-screen">
         <Header />
         {children}
         <Footer />
