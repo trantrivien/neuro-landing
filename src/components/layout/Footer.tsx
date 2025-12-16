@@ -18,31 +18,31 @@ const featureLinks = [
 ];
 
 const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/",
-    icon: <AiOutlineLinkedin className="w-8 h-8" />,
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com",
-    icon: <IoLogoInstagram className="w-8 h-8" />,
-  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "https://linkedin.com/",
+  //   icon: <AiOutlineLinkedin className="w-8 h-8" />,
+  // },
+  // {
+  //   name: "Instagram",
+  //   href: "https://instagram.com",
+  //   icon: <IoLogoInstagram className="w-8 h-8" />,
+  // },
   {
     name: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/neuroVaultOrg/",
     icon: <FiGithub className="w-8 h-8" />,
   },
   {
     name: "X (Twitter)",
-    href: "https://x.com",
+    href: "https://x.com/Neuro_Vault0x",
     icon: <FaXTwitter className="w-8 h-8" />,
   },
-  {
-    name: "YouTube",
-    href: "https://youtube.com",
-    icon: <RiYoutubeLine className="w-8 h-8" />,
-  },
+  // {
+  //   name: "YouTube",
+  //   href: "https://youtube.com",
+  //   icon: <RiYoutubeLine className="w-8 h-8" />,
+  // },
 ];
 
 export default function Footer() {
